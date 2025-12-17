@@ -61,4 +61,14 @@ class User extends Authenticatable
             ->map(fn ($word) => Str::substr($word, 0, 1))
             ->implode('');
     }
+
+    public function isSupplier()
+    {
+        return $this->role === 'supplier';
+    }
+    
+    public function isVendor()
+    {
+        return $this->role === 'vendor';
+    }
 }
